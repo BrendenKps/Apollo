@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inloggen - Apollo</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Algemene Stijlen */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-color: #1a1a4a;
+      color: #ffffff;
+    }
+
+    /* Formulier Container */
+    .form-container {
+      background-color: #1a1a4a;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+      max-width: 400px;
+      margin: 80px auto;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    input[type="text"], input[type="password"] {
+      width: 100%;
+      padding: 12px;
+      border-radius: 15px;
+      border: 1px solid #005080;
+      background-color: #333366;
+      color: #ffffff;
+      box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+    }
+
+    button[type="submit"] {
+      background-color: #0070a0;
+      color: #ffffff;
+      border: none;
+      border-radius: 15px;
+      padding: 12px 25px;
+      cursor: pointer;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    button[type="submit"]:hover {
+      background-color: #005080;
+    }
+
+    /* Extra Stijlen */
+    h1 {
+      text-align: center;
+      color: #b3e5ff;
+    }
+
+    .back-button {
+      display: block;
+      text-align: center;
+      margin-top: 20px;
+      color: #b3e5ff;
+      text-decoration: none;
+    }
+
+    .back-button:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <h1>Inloggen</h1>
+    <form id="loginForm">
+      <div class="form-group">
+        <input type="text" id="username" placeholder="Gebruikersnaam" required>
+      </div>
+      <div class="form-group">
+        <input type="password" id="password" placeholder="Wachtwoord" required>
+      </div>
+      <button type="submit">Inloggen</button>
+    </form>
+    <a href="register.html" class="back-button">Geen account? Registreer hier</a>
+  </div>
+
+  <script>
+    // JavaScript voor het verwerken van het inlogformulier
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Voorkom dat het formulier normaal wordt verzonden
+
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+
+      // Hier zou je de logica moeten implementeren voor het controleren van de inloggegevens
+      // Dit is een voorbeeld, je zou dit moeten aanpassen aan jouw systeem
+      if (username === "testUser" && password === "testPass") {
+        alert('Inloggen succesvol!');
+        window.location.href = 'account.html'; // Verander dit naar je accountpagina
+      } else {
+        alert('Ongeldige gebruikersnaam of wachtwoord.');
+      }
+    });
+  </script>
+</body>
+</html>

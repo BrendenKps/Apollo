@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maak een Review - Apollo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/5216/5216618.png" alt="Apollo Boost Logo" class="logo">
+    <h1>Maak een Review</h1>
+    <p>We horen graag wat je van onze FPS Boosters vindt!</p>
+  </header>
+
+  <div class="container">
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="producten.html">Winkel</a>
+      <a href="login.html">Inloggen</a>
+      <a href="ReviewMake.html">Maak een Review</a>
+    </nav>
+
+    <section class="review-form">
+      <h2>Schrijf je review</h2>
+      <div class="form-container">
+        <form id="reviewForm">
+          <div class="form-group">
+            <label for="username">Gebruikersnaam:</label>
+            <input type="text" id="username" required>
+          </div>
+          <div class="form-group">
+            <label for="review">Je review:</label>
+            <textarea id="review" rows="5" required></textarea>
+          </div>
+          <button type="submit">Verzend Review</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="existing-reviews">
+      <h2>Recensies</h2>
+      <div class="review-container">
+        <div class="review">
+          <p><strong>ProGamer99:</strong> "De FPS Booster heeft mijn gameplay echt verbeterd! Geen lag meer!"</p>
+        </div>
+        <div class="review">
+          <p><strong>SniperQueen:</strong> "Ik was sceptisch, maar deze booster is geweldig! Mijn schoten zijn nu veel preciezer."</p>
+        </div>
+        <div class="review">
+          <p><strong>EpicNinja:</strong> "Snel, effectief en zeer betrouwbaar. Absoluut een aanrader voor elke gamer!"</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

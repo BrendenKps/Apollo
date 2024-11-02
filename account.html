@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mijn Account</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Apollo Tweak Winkel</h1>
+    </header>
+    <div class="form-container">
+        <h2>Mijn Account</h2>
+        <p id="userGreeting"></p>
+        <button id="logoutButton">Uitloggen</button>
+    </div>
+
+    <script>
+        // Controleer of de gebruiker is ingelogd
+        const username = localStorage.getItem('loggedInUser');
+        
+        if (username) {
+            document.getElementById('userGreeting').innerText = 'Welkom, ' + username + '!';
+        } else {
+            alert('Je bent niet ingelogd. Je wordt teruggestuurd naar de inlogpagina.');
+            window.location.href = 'login.html'; // Stuur de gebruiker terug naar de inlogpagina
+        }
+
+        // Logout functie
+        document.getElementById('logoutButton').addEventListener('click', function() {
+            localStorage.removeItem('loggedInUser'); // Verwijder de ingelogde gebruiker
+            alert('Je bent uitgelogd.');
+            window.location.href = 'login.html'; // Stuur de gebruiker terug naar de inlogpagina
+        });
+    </script>
+</body>
+</html>

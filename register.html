@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registratie</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Algemene stijlen */
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #2c3e50, #4ca1af); /* Kleurovergang voor de achtergrond */
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: rgba(26, 26, 74, 0.9);
+            text-align: center;
+            padding: 20px;
+            border-bottom: 2px solid #005080;
+            border-radius: 0 0 20px 20px; /* Ronde onderhoeken */
+        }
+
+        .form-container {
+            background-color: rgba(26, 26, 74, 0.8);
+            padding: 30px;
+            border-radius: 20px; /* Ronde hoeken voor de container */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            max-width: 400px;
+            margin: 40px auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px; /* Vergroot de afstand tussen de invoervelden en knoppen */
+        }
+
+        label {
+            display: block; /* Zorg ervoor dat de label altijd op een nieuwe regel staat */
+            margin-bottom: 5px; /* Ruimte onder de label */
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border-radius: 15px; /* Ronde hoeken voor invoervelden */
+            border: 1px solid #005080;
+            background-color: #333366;
+            color: #ffffff;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+            transition: border 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="email"]:focus,
+        input[type="password"]:focus {
+            border-color: #0070a0;
+        }
+
+        button {
+            background-color: #0070a0;
+            color: white;
+            border: none;
+            border-radius: 15px; /* Ronde hoeken voor knoppen */
+            padding: 12px 20px; /* Vergrote padding voor knoppen */
+            cursor: pointer;
+            transition: background 0.3s;
+            margin-top: 10px; /* Voeg marge boven de knoppen toe */
+        }
+
+        button:hover {
+            background-color: #005080;
+        }
+
+        .strength-indicator {
+            height: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            transition: width 0.3s;
+        }
+
+        /* Link styling */
+        a {
+            color: #b3e5ff;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Apollo Tweak Winkel</h1>
+    </header>
+    <div class="form-container">
+        <h2>Maak een Account</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label for="username">Gebruikersnaam:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Wachtwoord:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="button" id="togglePassword">Bekijk</button>
+                <div class="strength-indicator" id="strengthIndicator"></div>
+            </div>
+            <button type="submit">Registreren</button>
+        </form>
+        <p>Heb je al een account? <a href="login.html">Inloggen</a></p>
+    </div>
+
+    <script>
+        // Toevoegen van een event listener aan het registratieformulier
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Voorkom standaard verzenden
+
+            // Verkrijgen van de waarden uit het formulier
+            const username = document.getElementById('username').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Opslaan in Local Storage
+            localStorage.setItem(username, JSON.stringify({ email: email, password: password }));
+            alert('Registratie succesvol!');
+
+            // Doorsturen naar de inlogpagina
+            window.location.href = 'login.html';
+        });
+
+        // Wachtwoord zichtbaar maken/verborgen
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+            passwordField.setAttribute('type', type);
+            this.textContent = type === 'password' ? 'Bekijk' : 'Verberg';
+        });
+
+        // Wachtwoordsterkte indicator
+        document.getElementById('password').addEventListener('input', function() {
+            const password = this.value;
+            const indicator = document.getElementById('strengthIndicator');
+
+            let strength = 0;
+
+            // Eenvoudige regels voor wachtwoordsterkte
+            if (password.length >= 6) strength++; // Minimaal 6 karakters
+            if (password.match(/[A-Z]/)) strength++; // Minimaal 1 hoofdletter
+            if (password.match(/[0-9]/)) strength++; // Minimaal 1 cijfer
+            if (password.match(/[^A-Za-z0-9]/)) strength++; // Minimaal 1 speciaal teken
+
+            // Sterkte-indicator bijwerken
+            switch (strength) {
+                case 0:
+                    indicator.style.width = '0%';
+                    indicator.style.backgroundColor = 'red';
+                    break;
+                case 1:
+                    indicator.style.width = '25%';
+                    indicator.style.backgroundColor = 'orange';
+                    break;
+                case 2:
+                    indicator.style.width = '50%';
+                    indicator.style.backgroundColor = 'yellow';
+                    break;
+                case 3:
+                    indicator.style.width = '75%';
+                    indicator.style.backgroundColor = 'lightgreen';
+                    break;
+                case 4:
+                    indicator.style.width = '100%';
+                    indicator.style.backgroundColor = 'green';
+                    break;
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Apollo - Tweak Winkel</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Algemene Stijlen */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background: linear-gradient(270deg, #a7c6e7, #1a1a4a, #0070a0);
+      background-size: 600% 600%;
+      animation: gradient-animation 15s ease infinite;
+      color: #ffffff;
+    }
+
+    /* Animatie voor de achtergrondkleur */
+    @keyframes gradient-animation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Header Stijl */
+    header {
+      background-color: rgba(26, 26, 74, 0.8);
+      text-align: center;
+      padding: 20px;
+      border-bottom: 2px solid #005080;
+      border-radius: 0 0 20px 20px;
+    }
+
+    /* Navbar Stijl */
+    .navbar {
+      display: flex;
+      justify-content: center;
+      background-color: rgba(10, 10, 62, 0.9);
+      padding: 10px 0;
+      border-radius: 0 0 20px 20px;
+    }
+
+    .navbar a {
+      color: #b3e5ff;
+      text-decoration: none;
+      padding: 15px 20px;
+      transition: background 0.3s;
+    }
+
+    .navbar a:hover {
+      background-color: #005080;
+      border-radius: 10px;
+    }
+
+    /* Stijl voor content kaders */
+    .content-box {
+      background-color: rgba(26, 26, 74, 0.9);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      margin: 20px 0;
+      color: #b3e5ff;
+    }
+
+    /* Button Stijlen */
+    button {
+      background-color: #0070a0;
+      color: white;
+      border: none;
+      border-radius: 15px;
+      padding: 10px 15px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #005080;
+    }
+
+    /* Review Sectie */
+    .review {
+      background-color: #0a0a3e;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 10px 0;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .review p {
+      margin: 0;
+      color: #b3e5ff;
+      font-size: 1.1em;
+    }
+
+    h1, h2, h3 {
+      color: #b3e5ff;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="https://cdn-icons-png.flaticon.com/512/5216/5216618.png" alt="Apollo Boost Logo" class="logo">
+    <h1>Welkom bij Apollo</h1>
+    <p>De luxe tweak winkel voor FPS Boosters</p>
+  </header>
+
+  <div class="container">
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="producten.html">Winkel</a>
+      <a href="login.html">Inloggen</a>
+      <a href="ReviewMake.html">Maak een Review</a>
+    </nav>
+
+    <!-- Informatie Kader -->
+    <div class="content-box">
+      <h2>Wat is Apollo?</h2>
+      <p>Bij Apollo bieden wij hoogwaardige FPS boosters aan om je game-ervaring te verbeteren.</p>
+      <button onclick="toggleDetails()">Meer informatie</button>
+      <div class="details" id="details">
+        <p>Onze FPS Boosters zijn speciaal ontworpen om jouw gaming-prestaties naar een hoger niveau te tillen.</p>
+      </div>
+    </div>
+
+    <!-- Social Media Kader -->
+    <div class="content-box">
+      <h3>Volg ons op sociale media:</h3>
+      <a href="https://www.tiktok.com" target="_blank">
+        <button class="social-button">TikTok</button>
+      </a>
+      <a href="https://discord.com" target="_blank">
+        <button class="social-button">Discord</button>
+      </a>
+    </div>
+
+    <!-- Recensies Kader -->
+    <div class="content-box">
+      <h2>Recensies van onze gamers</h2>
+      <div class="review">
+        <p><strong>ProGamer99:</strong> "De FPS Booster heeft mijn gameplay echt verbeterd! Geen lag meer!"</p>
+      </div>
+      <div class="review">
+        <p><strong>SniperQueen:</strong> "Ik was sceptisch, maar deze booster is geweldig! Mijn schoten zijn nu veel preciezer."</p>
+      </div>
+      <div class="review">
+        <p><strong>EpicNinja:</strong> "Snel, effectief en zeer betrouwbaar. Absoluut een aanrader voor elke gamer!"</p>
+      </div>
+      <div class="review">
+        <p><strong>GamerDude123:</strong> "De VIP-pakket is het echt waard! De PC cleaner maakt ook een groot verschil."</p>
+      </div>
+      <div class="review">
+        <p><strong>BattleMage:</strong> "Apollo's FPS Booster heeft mijn ervaringen met FPS-games veranderd. Bedankt Apollo!"</p>
+      </div>
+      <p><em>Maak zelf een review!</em></p>
+      <a href="ReviewMake.html">
+        <button class="social-button">Maak een Review</button>
+      </a>
+    </div>
+  </div>
+
+  <script>
+    function toggleDetails() {
+      var details = document.getElementById("details");
+      details.style.display = (details.style.display === "none" || details.style.display === "") ? "block" : "none";
+    }
+  </script>
+</body>
+</html>

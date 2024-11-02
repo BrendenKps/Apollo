@@ -1,0 +1,133 @@
+/* Algemene Stijlen */
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #0a0a3e, #1a1a4a);
+  color: #ffffff;
+  margin: 0;
+  padding: 0;
+}
+
+/* Header Stijl */
+header {
+  background-color: #1a1a4a;
+  text-align: center;
+  padding: 20px;
+  border-bottom: 2px solid #005080;
+  border-radius: 10px; /* Rondingen aan de bovenkant */
+}
+
+/* Logo Stijl */
+.logo {
+  width: 100px;
+}
+
+/* Navbar Stijl */
+.navbar {
+  display: flex;
+  justify-content: center;
+  background-color: #0a0a3e;
+  padding: 10px 0;
+}
+
+.navbar a {
+  color: #b3e5ff;
+  text-decoration: none;
+  padding: 15px 20px;
+  transition: background 0.3s;
+  border-radius: 15px; /* Rondingen voor navigatieknoppen */
+}
+
+.navbar a:hover {
+  background-color: #005080;
+}
+
+/* Container Stijl */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Sectie Stijlen */
+section {
+  margin: 20px 0;
+  text-align: center; /* Centraal uitlijnen van teksten en knoppen */
+}
+
+/* Formulier Stijlen */
+.form-container {
+  background-color: #1a1a4a;
+  padding: 30px;
+  border-radius: 20px; /* Rondingen voor formulieren */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+  max-width: 400px;
+  margin: 40px auto; /* Centraal in de pagina */
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px; /* Grotere rondingen voor invoervelden */
+  border: 1px solid #005080;
+  background-color: #333366;
+  color: #ffffff;
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  background-color: #0070a0;
+  color: #ffffff;
+  border: none;
+  border-radius: 25px; /* Grotere rondingen voor knoppen */
+  padding: 12px 25px;
+  cursor: pointer;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  font-size: 1.2em; /* Grotere tekst */
+}
+
+button:hover {
+  background-color: #005080;
+}
+
+/* Review Sectie */
+.review {
+  background-color: #1a1a4a;
+  padding: 15px;
+  border-radius: 10px;
+  margin: 10px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  max-width: 600px; /* Max breedte voor reviews */
+}
+
+.review p {
+  margin: 0;
+  color: #b3e5ff;
+  font-size: 1.1em;
+}
+
+/* Extra Stijlen */
+h1, h2, h3 {
+  color: #b3e5ff;
+}
+
+h2, h3 {
+  margin-top: 20px;
+}
+
+/* Social Button Stijlen */
+.social-button {
+  margin: 10px 5px;
+  border-radius: 25px; /* Ronde knoppen */
+}
